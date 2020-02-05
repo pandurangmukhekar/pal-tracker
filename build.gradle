@@ -4,6 +4,16 @@ plugins {
     id 'java'
 }
 
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
 repositories {
     mavenCentral()
 }
